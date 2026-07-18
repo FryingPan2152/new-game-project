@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://4pqund3nukl7"]
+
+[ext_resource type="Texture2D" uid="uid://df380qd16ji5f" path="res://bg.png" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://cse7cosiyfow4" path="res://rigid_body_2d.gd" id="2_0e48y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72y5o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ujql"]
+size = Vector2(960, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(24, 527)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t72dw"]
+size = Vector2(20, 527)
+
+[node name="Node2D" type="Node2D" unique_id=295163618]
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=770324349]
+visible = false
+position = Vector2(0, -1)
+texture = ExtResource("1_wtcfe")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1484270895]
+gravity_scale = 0.0
+script = ExtResource("2_0e48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=753485421]
+shape = SubResource("RectangleShape2D_72y5o")
+
+[node name="Camera2D" type="Camera2D" parent="RigidBody2D" unique_id=621589150]
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=675316914]
+position = Vector2(-3, -258)
+mass = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2" unique_id=509281600]
+position = Vector2(4, -20)
+shape = SubResource("RectangleShape2D_8ujql")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="." unique_id=357960754]
+position = Vector2(467, -257)
+mass = 1000.0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody2D3" unique_id=90951403]
+position = Vector2(2, 253.5)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="." unique_id=406221445]
+position = Vector2(-468, -258)
+mass = 1000.0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody2D5" unique_id=412358259]
+position = Vector2(0, 253.5)
+shape = SubResource("RectangleShape2D_t72dw")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="." unique_id=650137271]
+position = Vector2(-3, -258)
+mass = 1000.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D4" unique_id=1696992573]
+position = Vector2(2, 531)
+shape = SubResource("RectangleShape2D_8ujql")
