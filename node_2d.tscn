@@ -55,7 +55,7 @@ position = Vector2(0, 253.5)
 shape = SubResource("RectangleShape2D_t72dw")
 
 [node name="RigidBody2D4" type="RigidBody2D" parent="." unique_id=650137271]
-position = Vector2(-3, -258)
+position = Vector2(-4, -258)
 mass = 1000.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D4" unique_id=1696992573]
