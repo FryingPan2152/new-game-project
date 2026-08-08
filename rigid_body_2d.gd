@@ -1,8 +1,14 @@
 extends RigidBody2D
 #double vel for shift
 
+@onready var camera := $Camera2D
+
 func _physics_process(delta: float) -> void:
 	
+	if Input.is_action_pressed("zoom in"):
+		camera.zoom += Vector2(1,1) * delta
+	if Input.is_action_pressed("zoom out"):
+		camera.zoom -= Vector2(1,1) * delta
 	if Input.is_action_pressed("foward"):
 		var direction = Vector2(cos(rotation),sin(rotation))
 		linear_velocity += direction * delta * 150.0 
