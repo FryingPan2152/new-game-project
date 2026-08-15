@@ -2,8 +2,12 @@ extends RigidBody2D
 #double vel for shift
 
 @onready var camera := $Camera2D
+@onready var text := $Control/RichTextLabel
+@onready var timer:= $Timer
 
 func _physics_process(delta: float) -> void:
+	
+	text.text = "Time left: %d" % timer.time_left
 	
 	if Input.is_action_pressed("zoom in"):
 		camera.zoom += Vector2(1,1) * delta
@@ -35,3 +39,9 @@ func _physics_process(delta: float) -> void:
 	
 	
 	pass
+
+
+func _on_timer_timeout(delta: float) -> void:
+	linear_velocity -= linear_velocity.limit_length(70) * 0 * delta
+	print("braking: ", linear_velocity)
+	pass # Replace with function body.

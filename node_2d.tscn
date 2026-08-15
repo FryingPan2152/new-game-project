@@ -67,6 +67,25 @@ shape = SubResource("RectangleShape2D_72y5o")
 
 [node name="Camera2D" type="Camera2D" parent="RigidBody2D" unique_id=621589150]
 
+[node name="Control" type="Control" parent="RigidBody2D" unique_id=2095078574]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -22.0
+offset_top = -307.0
+offset_right = 18.0
+offset_bottom = -267.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RigidBody2D/Control" unique_id=1291538758]
+layout_mode = 0
+offset_right = 272.0
+offset_bottom = 25.0
+text = "HELLO"
+
+[node name="Timer" type="Timer" parent="RigidBody2D" unique_id=1553085145]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
 [node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=675316914]
 position = Vector2(-3, -258)
 mass = 1000.0
@@ -369,3 +388,5 @@ shape = SubResource("RectangleShape2D_d21ai")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="RigidBody2D25" unique_id=1183540556]
 position = Vector2(-934.7009, -3045.976)
 shape = SubResource("RectangleShape2D_rj586")
+
+[connection signal="timeout" from="RigidBody2D/Timer" to="RigidBody2D" method="_on_timer_timeout"]
