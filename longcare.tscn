@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://wxokcxep1228"]
+
+[ext_resource type="Script" uid="uid://durdyenni2kv" path="res://crate_script.gd" id="1_u03h7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ujql"]
+size = Vector2(111, 22)
+
+[node name="Longcare" type="RigidBody2D" unique_id=2105380327]
+script = ExtResource("1_u03h7")
+price = 12.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=884798602]
+shape = SubResource("RectangleShape2D_8ujql")

@@ -1,9 +1,12 @@
+class_name Player
 extends RigidBody2D
 #double vel for shift
 
 @onready var camera := $Camera2D
-@onready var text := $Control/RichTextLabel
+@onready var text := $CanvasLayer/Control/RichTextLabel
 @onready var timer:= $Timer
+
+# TODO: add a hl2 style phys gun using a raycast on the forklift!
 
 func _physics_process(delta: float) -> void:
 	
@@ -42,6 +45,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_timer_timeout(delta: float) -> void:
-	linear_velocity -= linear_velocity.limit_length(70) * 0 * delta
+	linear_velocity -= linear_velocity.limit_length(0) * 0 * delta
 	print("braking: ", linear_velocity)
 	pass # Replace with function body.

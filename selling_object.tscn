@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dyr52goxbobb2"]
+
+[ext_resource type="Script" uid="uid://e52cngfakdoq" path="res://selling_object.gd" id="1_cs7jr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khgjd"]
+size = Vector2(3500, 7368)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ujql"]
+radius = 500.0
+
+[node name="SellingObject" type="Node2D" unique_id=441763723]
+script = ExtResource("1_cs7jr")
+
+[node name="SellArea" type="Area2D" parent="." unique_id=1744029925]
+position = Vector2(14856, 19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SellArea" unique_id=2060694797]
+position = Vector2(1563, -37)
+shape = SubResource("RectangleShape2D_khgjd")
+
+[node name="SellComputer" type="Area2D" parent="." unique_id=423757167]
+position = Vector2(11026, -3278)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SellComputer" unique_id=132946082]
+shape = SubResource("CircleShape2D_8ujql")
+
+[node name="Label" type="Label" parent="SellComputer" unique_id=871620087]
+offset_left = -120.0
+offset_top = -610.0
+offset_right = 99.0
+offset_bottom = -527.0
+theme_override_font_sizes/font_size = 60
+text = "MONEY"

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://by50wocd8msy7"]
+
+[ext_resource type="Script" uid="uid://ca1a1tqjmmlc1" path="res://spawner.gd" id="1_yp5lu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ujql"]
+radius = 131.02
+
+[node name="Spawner" type="Area2D" unique_id=1575808817]
+script = ExtResource("1_yp5lu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=196489987]
+shape = SubResource("CircleShape2D_8ujql")
+
+[node name="Timer" type="Timer" parent="." unique_id=1663290173]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

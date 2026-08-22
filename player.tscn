@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ckudr8chj1kgo"]
+
+[ext_resource type="Script" uid="uid://cse7cosiyfow4" path="res://rigid_body_2d.gd" id="1_4flbx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0e48y"]
+rough = true
+bounce = 0.51
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0e48y"]
+height = 96.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72y5o"]
+size = Vector2(20, 121)
+
+[node name="Player" type="RigidBody2D" unique_id=944987226]
+mass = 721.158
+physics_material_override = SubResource("PhysicsMaterial_0e48y")
+gravity_scale = 0.0
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=696874623]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_0e48y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1125732570]
+position = Vector2(57, 0)
+shape = SubResource("RectangleShape2D_72y5o")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1794347127]
+
+[node name="Timer" type="Timer" parent="." unique_id=715488610]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=73770497]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1469107769]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control" unique_id=1382539839]
+layout_mode = 0
+offset_right = 272.0
+offset_bottom = 25.0
+text = "HELLO"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
