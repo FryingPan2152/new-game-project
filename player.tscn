@@ -48,4 +48,10 @@ offset_right = 272.0
 offset_bottom = 25.0
 text = "HELLO"
 
+[node name="PhsGunRay" type="RayCast2D" parent="." unique_id=556739148]
+target_position = Vector2(370, 0)
+
+[node name="PhsGunPoint" type="Node2D" parent="." unique_id=1167016781]
+position = Vector2(171, 0)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

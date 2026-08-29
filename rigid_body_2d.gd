@@ -5,6 +5,9 @@ extends RigidBody2D
 @onready var camera := $Camera2D
 @onready var text := $CanvasLayer/Control/RichTextLabel
 @onready var timer:= $Timer
+@onready var physray := $PhsGunRay
+@onready var physpoint: Node2D = $PhsGunPoint
+var currentlyHeldObject: RigidBody2D = null
 
 # TODO: add a hl2 style phys gun using a raycast on the forklift!
 
@@ -40,8 +43,19 @@ func _physics_process(delta: float) -> void:
 		#linear_velocity = (linear_velocity.rotated(angle_dif) * delta) + (linear_velocity * (1-delta))
 		linear_velocity = (linear_velocity.rotated(angle_dif))
 	
+	if Input.is_action_just_pressed("PhysTog"):
+		if is_instance_valid(currentlyHeldObject):
+			currentlyHeldObject = null
+		else:
+			if physray.is_colliding():
+				var object = physray.get_collider()
+				if object is Crate:
+					currentlyHeldObject = object
 	
-	pass
+	if is_instance_valid(currentlyHeldObject):
+		var direction = currentlyHeldObject.global_position.direction_to(physpoint.global_position)
+		var mult = physpoint.global_position.distance_to(currentlyHeldObject.global_position) * 30.0
+		currentlyHeldObject.apply_force(direction * mult)
 
 
 func _on_timer_timeout(delta: float) -> void:
