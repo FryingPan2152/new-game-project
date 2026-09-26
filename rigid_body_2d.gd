@@ -34,7 +34,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("brake"):
 		linear_velocity -= linear_velocity.limit_length(70) * 199.5 * delta
 		print("braking: ", linear_velocity)
-	
+	if Input.is_action_pressed("Dash"):
+		var direction = Vector2(cos(rotation),sin(rotation))
+		linear_velocity += direction * delta * 19000.0 
 	if Input.is_action_pressed("traction"):
 		var speed = linear_velocity.length()
 		var angle_dif = linear_velocity.angle_to(Vector2.from_angle(rotation))
