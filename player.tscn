@@ -17,6 +17,7 @@ size = Vector2(20, 121)
 mass = 721.158
 physics_material_override = SubResource("PhysicsMaterial_0e48y")
 gravity_scale = 0.0
+continuous_cd = 1
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=696874623]

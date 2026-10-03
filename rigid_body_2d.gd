@@ -32,7 +32,12 @@ func _physics_process(delta: float) -> void:
 		var direction = Vector2(cos(rotation), sin(rotation))
 		rotation += 1 * delta
 	if Input.is_action_pressed("brake"):
+		
 		linear_velocity -= linear_velocity.limit_length(70) * 199.5 * delta
+		
+		if linear_velocity.length() < 60.0:
+			linear_velocity *= 0
+		
 		print("braking: ", linear_velocity)
 	if Input.is_action_pressed("Dash"):
 		var direction = Vector2(cos(rotation),sin(rotation))
@@ -53,7 +58,12 @@ func _physics_process(delta: float) -> void:
 				var object = physray.get_collider()
 				if object is Crate:
 					currentlyHeldObject = object
-	
+	if Input.is_action_just_pressed("Repulse"):
+		if is_instance_valid(currentlyHeldObject):
+			var direction = Vector2(cos(rotation),sin(rotation))
+			currentlyHeldObject.linear_velocity += direction * delta * 199000.0 
+			currentlyHeldObject = null
+			
 	if is_instance_valid(currentlyHeldObject):
 		var direction = currentlyHeldObject.global_position.direction_to(physpoint.global_position)
 		var mult = physpoint.global_position.distance_to(currentlyHeldObject.global_position) * 30.0

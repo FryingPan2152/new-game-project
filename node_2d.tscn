@@ -46,7 +46,7 @@ texture = ExtResource("1_wtcfe")
 [node name="Player" parent="." unique_id=944987226 instance=ExtResource("2_epypp")]
 
 [node name="Spawner" parent="." unique_id=1575808817 instance=ExtResource("3_epypp")]
-position = Vector2(356, -89)
+position = Vector2(314, 2)
 
 [node name="Preplaced_objects" type="Node2D" parent="." unique_id=1485534815]
 
@@ -146,7 +146,7 @@ position = Vector2(8, 1019)
 shape = SubResource("RectangleShape2D_8ujql")
 
 [node name="RigidBody2D21" type="RigidBody2D" parent="Preplaced_objects" unique_id=1764287344]
-position = Vector2(2609, -385)
+position = Vector2(2370, -806)
 mass = 1000.0
 script = ExtResource("4_q6r6c")
 
@@ -240,7 +240,7 @@ mass = 1000.0
 script = ExtResource("4_q6r6c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Preplaced_objects/RigidBody2D15" unique_id=437292430]
-position = Vector2(-1481.6158, 2982.9636)
+position = Vector2(-997.50854, 2984.3918)
 rotation = 2.0900743
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_8ujql")
@@ -320,6 +320,7 @@ shape = SubResource("RectangleShape2D_sacie")
 [node name="RigidBody2D22" type="RigidBody2D" parent="Preplaced_objects" unique_id=627422834]
 position = Vector2(18694, 103)
 rotation = -1.5649977
+freeze = true
 script = ExtResource("4_q6r6c")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Preplaced_objects/RigidBody2D22" unique_id=326148238]
